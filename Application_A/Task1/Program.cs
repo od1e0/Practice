@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Spectre.Console;
 
 namespace Task1
@@ -15,9 +11,9 @@ namespace Task1
             var b = AnsiConsole.Ask<double>("b=");
             var c = AnsiConsole.Ask<double>("c=");
 
-            AnsiConsole.MarkupLine($"({a.ToString("F4")}+({b.ToString("F4")}+{c.ToString("F4")})=({a.ToString("F4")}+{b.ToString("F4")}+{c.ToString("F4")})");
+            AnsiConsole.MarkupLine($"({a:F4}+({b:F4}+{c:F4})=({a:F4}+{b:F4}+{c:F4})");
             
-            AnsiConsole.MarkupLine("[lime]Для продолжения нажмите любую кнопку...[/]");
+            AnsiConsole.MarkupLine("\n[lime]Для продолжения нажмите любую кнопку...[/]");
             Console.ReadKey();
         }
     }
