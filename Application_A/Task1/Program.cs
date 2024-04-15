@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Spectre.Console;
 
-namespace Application_A
+namespace Task1
 {
-    internal class zad1
+    internal class Program
     {
         static void Main(string[] args)
         {
@@ -16,6 +16,7 @@ namespace Application_A
             var c = AnsiConsole.Ask<double>("c=");
 
             AnsiConsole.MarkupLine($"({a.ToString("F4")}+({b.ToString("F4")}+{c.ToString("F4")})=({a.ToString("F4")}+{b.ToString("F4")}+{c.ToString("F4")})");
+            
             AnsiConsole.MarkupLine("[lime]Для продолжения нажмите любую кнопку...[/]");
             Console.ReadKey();
         }
