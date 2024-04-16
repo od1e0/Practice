@@ -7,7 +7,7 @@ namespace Task7
         static void Main(string[] args)
         {
             Console.Write("Введите натуральное число: ");
-            int number = Convert.ToInt32(Console.ReadLine());
+            int number = int.Parse(Console.ReadLine());
 
             int minDigit = 9, maxDigit = 0;
 
