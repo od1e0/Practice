@@ -47,6 +47,8 @@ namespace Task2
             {
                 WriteLine(ex.Message);
             }
+
+            System.Console.ReadKey();
         }
     }
 }

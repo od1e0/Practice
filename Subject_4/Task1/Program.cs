@@ -29,6 +29,8 @@ namespace Task1
             {
                 WriteLine("Ошибка деления на ноль. x не должен быть равен 1.");
             }
+
+            System.Console.ReadKey();
         }
     }
 }

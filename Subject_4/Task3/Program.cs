@@ -37,6 +37,8 @@ namespace Task3
             {
                 WriteLine("Произошла ошибка: " + ex.Message);
             }
+
+            System.Console.ReadKey();
         }
 
         static void Minmax(ref double X, ref double Y)
