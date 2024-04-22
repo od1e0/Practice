@@ -34,17 +34,19 @@ namespace Task3
                 }
             }
 
-            AnsiConsole.Render(new Table().AddColumns("Матрица:"));
+            var table = new Table();
             for (int i = 0; i < N; i++)
             {
-                var row = new List<string>();
                 for (int j = 0; j < N; j++)
-                    row.Add(matrix[i, j].ToString());
-                AnsiConsole.Render(new Table().AddRow(row.ToArray()));
+                {
+                    table.AddColumn(matrix[i, j].ToString());
+                }
+                Render(table);
+                table = new Table();
             }
 
-            AnsiConsole.MarkupLine($"Сумма чисел, принадлежащих промежутку [K, L): [green]{sum}[/]");
-            AnsiConsole.MarkupLine($"Наибольший элемент k-того столбца: [green]{max}[/]");
+            //MarkupLine($"Сумма чисел, принадлежащих промежутку [K, L): [green]{sum}[/]");
+            MarkupLine($"Наибольший элемент k-того столбца: [green]{max}[/]");
 
             System.Console.ReadLine();
         }
