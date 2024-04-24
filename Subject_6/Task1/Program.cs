@@ -2,6 +2,7 @@
 using System.Linq;
 using Spectre.Console;
 using static Spectre.Console.AnsiConsole;
+
 namespace Task1
 {
     internal class Program
