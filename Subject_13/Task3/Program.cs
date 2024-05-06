@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
-    internal class Program
-    {
-        static void Main(string[] args)
+        internal class Program
         {
-            MyInfo info = new MyInfo("Владимир");
-            info.NameChanged += (oldName, newName) =>
+            static void Main(string[] args)
             {
-                Console.WriteLine($"Имя изменено с {oldName} на {newName}");
-            };
+                MyInfo info = new MyInfo("Владимир");
+                info.NameChanged += (oldName, newName) =>
+                {
+                    Console.WriteLine($"Имя изменено с {oldName} на {newName}");
+                };
 
-            info.Name = "Егор";
-            info.Name = "Саша";
+                info.Name = "Егор";
+                info.Name = "Саша";
 
-            Console.ReadLine();
+                Console.ReadLine();
 
+            }
         }
-    }
 }
