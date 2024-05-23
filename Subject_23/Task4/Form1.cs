@@ -23,34 +23,62 @@ namespace Task4
             int xCoord = int.Parse(xCoordTextBox.Text);
             int yCoord = int.Parse(yCoordTextBox.Text);
 
-            Control newControl = null;
+            Control newControl = CreateControl(controlType);
+            if (newControl != null)
+            {
+                ConfigureControl(newControl, xCoord, yCoord);
+                Controls.Add(newControl);
+                SetControlRemoval(newControl);
+            }
+        }
+
+        private Control CreateControl(string controlType)
+        {
             switch (controlType)
             {
                 case "К":
-                    newControl = new Button();
-                    newControl.Text = "Новая кнопка";
-                    newControl.BackColor = Color.LightBlue;
-                    break;
+                    return CreateButton();
                 case "П":
-                    newControl = new TextBox();
-                    newControl.Text = "Новое поле";
-                    break;
+                    return CreateTextBox();
                 case "М":
-                    newControl = new Label();
-                    ((Label)newControl).Text = "Новая метка";
-                    ((Label)newControl).ForeColor = Color.Red;
-                    break;
+                    return CreateLabel();
                 default:
                     MessageBox.Show("Введите корректный тип элемента (К, П, М)");
-                    return;
+                    return null;
             }
+        }
+        private Control CreateButton()
+        {
+            Button button = new Button();
+            button.Text = "Новая кнопка";
+            button.BackColor = Color.LightBlue;
+            return button;
+        }
 
-            newControl.Location = new Point(xCoord, yCoord);
-            newControl.Size = new Size(100, 30);
+        private Control CreateTextBox()
+        {
+            TextBox textBox = new TextBox();
+            textBox.Text = "Новое поле";
+            return textBox;
+        }
 
-            Controls.Add(newControl);
+        private Control CreateLabel()
+        {
+            Label label = new Label();
+            label.Text = "Новая метка";
+            label.ForeColor = Color.Red;
+            return label;
+        }
 
-            newControl.MouseEnter += (s, ev) => Controls.Remove(newControl);
+        private void ConfigureControl(Control control, int xCoord, int yCoord)
+        {
+            control.Location = new Point(xCoord, yCoord);
+            control.Size = new Size(100, 30);
+        }
+
+        private void SetControlRemoval(Control control)
+        {
+            control.MouseEnter += (s, ev) => Controls.Remove(control);
         }
     }
 }
