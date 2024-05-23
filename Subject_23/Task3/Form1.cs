@@ -21,7 +21,6 @@ namespace Task3
         {
             Graphics g = e.Graphics;
 
-            // Настройка кистей и перьев
             Pen blackPen = new Pen(Color.Black, 2);
             Brush brownBrush = new SolidBrush(Color.Brown);
             Brush whiteBrush = new SolidBrush(Color.White);

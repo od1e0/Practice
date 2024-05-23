@@ -39,12 +39,10 @@ namespace Task2
 
         private void InitializeControls()
         {
-            // Создаем текстовые поля для ввода Xmin, Xmax и Step
             textBoxXmin = new TextBox { Dock = DockStyle.Top, Text = "Введите Xmin" };
             textBoxXmax = new TextBox { Dock = DockStyle.Top, Text = "Введите Xmax" };
             textBoxStep = new TextBox { Dock = DockStyle.Top, Text = "Введите шаг" };
 
-            // Создаем кнопку
             buttonCalc = new Button
             {
                 Text = "Расчёт",
@@ -52,7 +50,6 @@ namespace Task2
             };
             buttonCalc.Click += new EventHandler(buttonCalc_Click);
 
-            // Добавляем элементы управления на форму
             this.Controls.Add(textBoxStep);
             this.Controls.Add(textBoxXmax);
             this.Controls.Add(textBoxXmin);
@@ -63,12 +60,10 @@ namespace Task2
         {
             try
             {
-                // Считываем с формы требуемые значения
                 double Xmin = double.Parse(textBoxXmin.Text);
                 double Xmax = double.Parse(textBoxXmax.Text);
                 double Step = double.Parse(textBoxStep.Text);
 
-                // Обновляем график для значений x в заданном диапазоне
                 UpdateChart(Xmin, Xmax, Step);
             }
             catch (FormatException)
@@ -84,18 +79,14 @@ namespace Task2
 
         private void UpdateChart(double Xmin, double Xmax, double Step)
         {
-            // Заданные значения y и z
             double y = 0.827;
             double z = 25.001;
 
-            // Количество точек
             int count = (int)Math.Ceiling((Xmax - Xmin) / Step) + 1;
 
-            // Массивы значений X и C
             double[] xValues = new double[count];
             double[] cValues = new double[count];
 
-            // Вычисляем точки для графика функции
             for (int i = 0; i < count; i++)
             {
                 double x = Xmin + Step * i;
@@ -103,10 +94,8 @@ namespace Task2
                 cValues[i] = CalculateFunction(x, y, z);
             }
 
-            // Очищаем предыдущие точки графика
             chart1.Series["c(x)"].Points.Clear();
 
-            // Добавляем вычисленные значения в график
             chart1.Series["c(x)"].Points.DataBindXY(xValues, cValues);
         }
     }
