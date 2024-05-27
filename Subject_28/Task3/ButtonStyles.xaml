@@ -1,14 +1,14 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style x:Key="TriangleButtonStyle" TargetType="Button">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid>
                         <Polygon Points="0,50 50,0 100,50"
-                                 Fill="LightBlue"
-                                 Stroke="Black"
-                                 StrokeThickness="1"/>
+                            Fill="LightBlue"
+                            Stroke="Black"
+                            StrokeThickness="1"/>
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
                 </ControlTemplate>
@@ -16,16 +16,15 @@
         </Setter>
     </Style>
 
-    <!-- Круглая кнопка -->
     <Style x:Key="CircleButtonStyle" TargetType="Button">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid>
                         <Ellipse Width="100" Height="100"
-                                 Fill="LightGreen"
-                                 Stroke="Black"
-                                 StrokeThickness="1"/>
+                            Fill="LightGreen"
+                            Stroke="Black"
+                            StrokeThickness="1"/>
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
                 </ControlTemplate>
@@ -33,16 +32,15 @@
         </Setter>
     </Style>
 
-    <!-- Кнопка в форме пирамиды -->
     <Style x:Key="PyramidButtonStyle" TargetType="Button">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid>
                         <Polygon Points="0,50 50,0 100,50 75,75 25,75"
-                                 Fill="LightCoral"
-                                 Stroke="Black"
-                                 StrokeThickness="1"/>
+                            Fill="LightCoral"
+                            Stroke="Black"
+                            StrokeThickness="1"/>
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
                 </ControlTemplate>
