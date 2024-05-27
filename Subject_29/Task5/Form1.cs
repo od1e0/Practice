@@ -17,12 +17,12 @@ namespace Task5
             isLaunching = false;
 
             timer = new Timer();
-            timer.Interval = 20; 
+            timer.Interval = 20;
             timer.Tick += Timer_Tick;
 
             buttonLaunch.Click += ButtonLaunch_Click;
         }
-        
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (isLaunching)

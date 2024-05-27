@@ -36,12 +36,13 @@
             // 
             // buttonLaunch
             // 
+            this.buttonLaunch.BackColor = System.Drawing.Color.Red;
             this.buttonLaunch.Location = new System.Drawing.Point(318, 369);
             this.buttonLaunch.Name = "buttonLaunch";
             this.buttonLaunch.Size = new System.Drawing.Size(138, 69);
             this.buttonLaunch.TabIndex = 0;
-            this.buttonLaunch.Text = "button1";
-            this.buttonLaunch.UseVisualStyleBackColor = true;
+            this.buttonLaunch.Text = "Start";
+            this.buttonLaunch.UseVisualStyleBackColor = false;
             // 
             // pictureBoxRocket
             // 

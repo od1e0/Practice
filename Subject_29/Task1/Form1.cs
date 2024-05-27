@@ -22,7 +22,7 @@ namespace Task1
         private void InitializeTimer()
         {
             timer = new Timer();
-            timer.Interval = 1000; 
+            timer.Interval = 1000;
             timer.Tick += Timer_Tick;
             timer.Start();
         }
@@ -30,7 +30,7 @@ namespace Task1
         private void Timer_Tick(object sender, EventArgs e)
         {
             angle += 6;
-            angle %= 360; 
+            angle %= 360;
 
             Invalidate();
         }
