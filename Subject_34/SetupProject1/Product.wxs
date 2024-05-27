@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="SetupProject1" Language="1049" Version="1.0.0.0" Manufacturer="VladimirZ" UpgradeCode="b167bffa-c58b-4def-8678-62029cd0d170">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="SetupProject1" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+		<WixVariable Id="WixUILicenseRtf" Overridable="yes" Value="License.rtf"/>
+		<UIRef Id="WixUI_InstallDir"/>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="SetupProject1" />
+			</Directory>
+			<Directory Id="ProgramMenuFolder">
+				<Directory Id="ApplicationProgrammFolder" Name="SetupProject1">
+					<Component Id="ApplicationShortcut" Guid="c33741d3-07f2-4327-b0cb-f747e0cd4ca3">
+						<Shortcut Id="Shortcut"
+                                  Name="App"
+                                  Description="SetupProject1"
+                                  Target="[INSTALLFOLDER]calc.exe"
+                                  WorkingDirectory="INSTALLFOLDER"/>
+						<RemoveFolder Id="ApplicationProgrammFolder" On="uninstall"/>
+						<RegistryValue Root="HKCU" Key="Software\VladimirZ\SetupProject1" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+					</Component>
+				</Directory>
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<DirectoryRef Id="INSTALLFOLDER">
+			<Component Id="ConsoeAppComponent" Guid="772062ce-5e1d-48c0-9a10-ff4d151a8849">
+				<File Id="MyApp" DiskId="1" Source="calc.exe"/>
+			</Component>
+		</DirectoryRef>
+
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<ComponentRef Id="ApplicationShortcut" />
+			<ComponentRef Id="ConsoeAppComponent" />
+		</ComponentGroup>
+	</Fragment>
+</Wix>
