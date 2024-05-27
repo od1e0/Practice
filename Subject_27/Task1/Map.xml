@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Map>
+  <Country>
+    <Name>США</Name>
+    <Area>9833517</Area>
+    <Population>331449281</Population>
+  </Country>
+  <Country>
+    <Name>Канада</Name>
+    <Area>9976140</Area>
+    <Population>37742154</Population>
+  </Country>
+  <Country>
+    <Name>Бразилия</Name>
+    <Area>8515767</Area>
+    <Population>213993437</Population>
+  </Country>
+  <Country>
+    <Name>Австралия</Name>
+    <Area>7692024</Area>
+    <Population>25687041</Population>
+  </Country>
+  <Country>
+    <Name>Индия</Name>
+    <Area>3287263</Area>
+    <Population>1393409038</Population>
+  </Country>
+  <Country>
+    <Name>123</Name>
+    <Area>123</Area>
+    <Population>123</Population>
+  </Country>
+  <Country>
+    <Name>123</Name>
+    <Area>123123</Area>
+    <Population>123123</Population>
+  </Country>
+  <Country>
+    <Name>qqwdqw</Name>
+    <Area>123123</Area>
+    <Population>1212</Population>
+  </Country>
+</Map>
